@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>SuAAS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            adding-top: 5rem;
+        }
+
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        a.active {
+            background-color: #315F93 !important;
+        }
+
+        .custom_color {
+            background-color: #315F93 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <img alt="Logo" class="text-center"
+                         src="/logo.png">
+                    <br/>
+                    <br/>
+                    <ul class="nav nav-pills" id="myTab" role="tablist" style="padding-left: 42%;">
+                        <li class="nav-item ">
+                            <a aria-controls="home" aria-selected="true" class="nav-link active"
+                               data-toggle="tab"
+                               href="#home" id="home-tab" role="tab" style="text-decoration: none;">
+                                Text
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab"
+                               href="#profile" id="profile-tab" role="tab" style="text-decoration: none;">
+                                Audio Link
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+                            <div class="form-group">
+                                <br/>
+                                <br/>
+                                <label>
+                                    Enter your text here:
+                                </label>
+                                <textarea class="form-control" id="getSummaryOfText" rows="5"
+                                          style="border-radius: 4px;width: 50%;display: block; border: 1px solid gray; margin-left: auto; margin-right: auto">
+                                </textarea>
+                                <br/>
+                                <br/>
+                                <label>
+                                    Number of Lines:
+                                </label>
+                                <input type="number" id="textCount"/>
+                            </div>
+                            <button class="btn btn-primary custom_color" type="button" onclick="getTextSummary()">
+                                Summarize
+                            </button>
+                        </div>
+                        <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+                            <div class="form-group">
+                                <br/>
+                                <br/>
+                                <label>
+                                    Enter Audio URL:
+                                </label>
+                                <input type="url" id="imageURL"/>
+                                <br/>
+                                <br/>
+                                <label>
+                                    Number of Lines:
+                                </label>
+                                <input type="number" id="imageCount"/>
+                            </div>
+                            <button class="btn btn-primary custom_color" type="button" onclick="sendImageSummary()">
+                                Summarize
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="margin-top:1%;">
+    <div class="col-md-12">
+        <table id="resultTable" class="table table-striped table-bordered col-md-12" style="width:100%">
+            <thead>
+            <tr>
+                <th>Request ID</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" id="showResultButton"
+        style="display: none;">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Summary Results</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="showResult">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"/>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "136439802744",
+    "firebase_url": "https://healthy-topic-200211.firebaseio.com",
+    "project_id": "healthy-topic-200211",
+    "storage_bucket": "healthy-topic-200211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136439802744:android:3b052dd70320c368",
+        "android_client_info": {
+          "package_name": "com.example.santoshkumaramisagadda.summerizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136439802744-8jr3arushneohjne0g22v1rev11g7eo1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.santoshkumaramisagadda.summerizer",
+            "certificate_hash": "c0fc7dfb75a1d6a227c24d67cc62b581e4383dc7"
+          }
+        },
+        {
+          "client_id": "136439802744-t9anmq20ho17qgro2ervjt9obl9p6mkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnHcLD3KIgWMBUZdv5oTuphvh_IpyF1Zg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136439802744-t9anmq20ho17qgro2ervjt9obl9p6mkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

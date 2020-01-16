@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.santoshkumaramisagadda.summerizer.FirstScreen">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="156dp"
+        android:fontFamily="serif"
+        android:text="Choose your type of content"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="21sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/text_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="108dp"
+        android:background="@color/colorAccent"
+        android:text="Text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/image_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:text="Image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_button" />
+
+    <Button
+        android:id="@+id/audio_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="119dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:text="Audio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_button" />
+
+    <Button
+        android:id="@+id/file_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="120dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="148dp"
+        android:background="@color/colorAccent"
+        android:text="Existing file "
+        app:layout_constraintBottom_toTopOf="@+id/text_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="229dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="serif"
+        android:text="Size of Summary:                  (# of lines)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="21sp"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="98dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="55dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

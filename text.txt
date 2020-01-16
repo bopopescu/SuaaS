@@ -1,0 +1,53 @@
+{
+  "@type": "type.googleapis.com/google.cloud.speech.v1.LongRunningRecognizeResponse",
+  "results": [
+    {
+      "alternatives": [
+        {
+          "confidence": 0.9681661,
+          "transcript": "this thing is so much crappy I don't get it"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.9469948,
+          "transcript": " why are we even doing this"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.83737224,
+          "transcript": " Google if you should probably improve your system"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.84536225,
+          "transcript": " to manage to do an MP3 boot"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.77985674,
+          "transcript": " we love with crap we don't want"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.96100616,
+          "transcript": " thank you and get lost"
+        }
+      ]
+    }
+  ]
+}
