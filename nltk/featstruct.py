@@ -2369,7 +2369,7 @@ def interactive_demo(trace=False):
 
 
     while 1:
-        # Pick 5 feature structures at random from the master list.
+        # Pick 5 feature structures at random from the main list.
         MAX_CHOICES = 5
         if len(all_fstructs) > MAX_CHOICES:
             fstructs = random.sample(all_fstructs, MAX_CHOICES)

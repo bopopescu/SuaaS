@@ -339,7 +339,7 @@ class MosesTokenizer(TokenizerI):
         Is 9.5 or 525,600 my favorite number ?
         >>> text = u'The https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl is a website with/and/or slashes and sort of weird : things'
         >>> print (mtokenizer.tokenize(text, return_str=True))
-        The https : / / github.com / jonsafari / tok-tok / blob / master / tok-tok.pl is a website with / and / or slashes and sort of weird : things
+        The https : / / github.com / jonsafari / tok-tok / blob / main / tok-tok.pl is a website with / and / or slashes and sort of weird : things
         >>> text = u'This, is a sentence with weird\xbb symbols\u2026 appearing everywhere\xbf'
         >>> expected = u'This , is a sentence with weird \xbb symbols \u2026 appearing everywhere \xbf'
         >>> assert mtokenizer.tokenize(text, return_str=True) == expected
